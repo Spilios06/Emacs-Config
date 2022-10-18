@@ -1,0 +1,28 @@
+#+title: Rex's Config
+#+author: Spilios Maderakis
+#+property:
+
+* Information About This Config
+
+Doom Emacs is a distribution of the popular GNU/Emacs interpreter. This distribution of emacs utilizes the 'evil' keybindings which are normally used in the popular text editor vim. This configuration will be kept and maintiained on my github repository, this is my personal configuration for emacs and you can use this configuration yourself or use this configuration alongside this org document as a reference or guide to write your own config for emacs.
+
+* Emacs Lisp
+
+Emacs lisp is a dialect of the Lisp programming languadge with better adjustements and extentions for text editing and various other uses. This file besides being used for documentation for the repo, it is also an emacs lisp script run by Doom Emacs itself, org mode is a core feature of Emacs and is one of the main reasons for which people use emacs in the first place.
+
+* Org Mode
+
+Org mode
+
+#+BEGIN_SRC emacs-lisp
+
+(setq user-full-name "Spilios Maderakis"
+      user-mail-address "smaderakis06@gmail.com")
+
+(setq doom-theme 'doom-one)
+
+(setq display-line-numbers-type t)
+
+(setq org-directory "~/org/")
+
+#+END_SRC
