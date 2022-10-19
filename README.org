@@ -31,7 +31,7 @@ After downloading doom emacs and this org file, you simply need to place this fi
 
 * Fonts
 
-Sets the various fonts (default, big and variable which is sometimes used by plugins) as well as enabling bold and italic characters. The last lines make special keywords within programming languadges italisised, meaning if you are writing a python script and want to use a while loop, the word while will be in italics since it has significance within that programming languadge.
+Sets the various fonts (default, big and variable which is sometimes used by plugins) as well as enabling bold and italic characters. The last lines make special keywords within programming languadges italisised, meaning if you are writing a python script and want to use a while loop, the word while will be in italics since it has significance within that programming languadge. These fonts may not be installed by default onto your system and emacs will not render properly unless they are installed so if they aren't installed follow [[https://docs.rockylinux.org/books/nvchad/nerd_fonts/][this]] guide to install them if you dont know how to.
 
 #+begin_src emacs-lisp
 (setq doom-font (font-spec :family "SauceCodePro Nerd Font Mono" :size 15)
