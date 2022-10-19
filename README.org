@@ -1,4 +1,4 @@
-#+title: Rex's Config
+#+title: My Config
 #+author: Spilios Maderakis
 #+property: header-args :tangle config.el
 
