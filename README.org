@@ -12,6 +12,7 @@
 - [[#themes][Themes]]
 - [[#org-mode-1][Org Mode]]
 - [[#window-split][Window Split]]
+- [[#dashboard][Dashboard]]
 
 * Information About This Config
 
@@ -72,4 +73,18 @@ Sets the various fonts (default, big and variable which is sometimes used by plu
 (add-hook 'markdown-mode-hook 'prefer-horizontal-split)
 (map! :leader
       :desc "Clone indirect buffer other window" "b c" #'clone-indirect-buffer-other-window)
+#+end_src
+
+* Dashboard
+#+begin_src emacs-lisp
+(use-package dashboard
+  :init
+  (setq dashboard-set-heading-icons t)
+  (setq dashboard-set-file-icons t)
+  (setq dashboard-startup-banner 'logo)
+  ;(setq dashboard-startup-banner "~/.config/doom/doom-emacs-dash.png")
+  (setq dashboard-center-content t))
+  :config
+  (dashboard-setup-startup-hook)
+(setq doom-fallback-buffer "*dashboard")
 #+end_src
