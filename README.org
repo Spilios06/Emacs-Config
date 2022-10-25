@@ -81,8 +81,8 @@ Sets the various fonts (default, big and variable which is sometimes used by plu
   :init
   (setq dashboard-set-heading-icons t)
   (setq dashboard-set-file-icons t)
-  (setq dashboard-startup-banner 'logo)
-  ;(setq dashboard-startup-banner "~/.config/doom/doom-emacs-dash.png")
+  ;(setq dashboard-startup-banner 'logo)
+  (setq dashboard-startup-banner "~/.config/doom/doom-emacs-dash.png")
   (setq dashboard-center-content t))
   :config
   (dashboard-setup-startup-hook)
