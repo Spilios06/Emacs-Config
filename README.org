@@ -92,7 +92,7 @@ Sets the various fonts (default, big and variable which is sometimes used by plu
 
 * Cursor Beacon
 
-Makes the line on whic the cursor is on shine while scrolling
+Makes the line on which the cursor is on shine while scrolling
 
 #+begin_src emacs-lisp
 (beacon-mode 1)
