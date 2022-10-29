@@ -13,6 +13,7 @@
 - [[#org-mode-1][Org Mode]]
 - [[#window-split][Window Split]]
 - [[#dashboard][Dashboard]]
+- [[#cursor-beacon][Cursor Beacon]]
 
 * Information About This Config
 
@@ -87,4 +88,12 @@ Sets the various fonts (default, big and variable which is sometimes used by plu
   :config
   (dashboard-setup-startup-hook)
 (setq doom-fallback-buffer "*dashboard")
+#+end_src
+
+* Cursor Beacon
+
+Makes the line on whic the cursor is on shine while scrolling
+
+#+begin_src emacs-lisp
+(beacon-mode 1)
 #+end_src

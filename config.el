@@ -31,3 +31,5 @@
   :config
   (dashboard-setup-startup-hook)
 (setq doom-fallback-buffer "*dashboard")
+
+(beacon-mode 1)
