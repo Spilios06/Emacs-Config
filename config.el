@@ -33,3 +33,5 @@
 (setq doom-fallback-buffer "*dashboard")
 
 (beacon-mode 1)
+
+
