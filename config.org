@@ -66,13 +66,9 @@ Sets the various fonts (default, big and variable which is sometimes used by plu
 #+begin_src emacs-lisp
 (map! :leader
       :desc "Org babel tangle" "m B" #'org-babel-tangle)
-(after! org
-  (setq org-directory "~/org/")
-        org-ellipsis " ▼ "
-        org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆")
-        org-superstar-itembullet-alist '((?+ . ?➤) (?- . ?✦)) ; changes +/- symbols in item lists
-        org-log-done 'time
-        org-hide-emphasis-markers t
+(setq org-directory "~/org/")
+(setq org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆"))
+      ;;org-superstar-itembullet-alist '((?+ . ?➤) (?- . ?✦)) ; changes +/- symbols in item lists
 #+end_src
 
 * Window Split
@@ -113,12 +109,12 @@ Makes the line on which the cursor is on shine while scrolling.
 The file manager used in doom emacs. With dired-open plugin, you can launch external programs for certain extensions.
 
 #+begin_src emacs-lisp
-(map! :leader
-      (:prefix ("d" . "dired")
-       :desc "Open dired" "d" #'dired)
-(evil-define-key 'normal dired-mode-map
-  (kbd "h") 'dired-up-directory
-  (kbd "l") 'dired-open-file
+;;(map! :leader
+;;      (:prefix ("d" . "dired")
+;;       :desc "Open dired" "d" #'dired)
+;;(evil-define-key 'normal dired-mode-map
+;;  (kbd "h") 'dired-up-directory
+;;  (kbd "l") 'dired-open-file
 
 ;;(setq dired-open-extensions '(("gif" . "sxiv")
 ;;                              ("jpg" . "sxiv")
@@ -131,18 +127,11 @@ The file manager used in doom emacs. With dired-open plugin, you can launch exte
 
 Specific keybindings to jump to specific files which I open and edit often.
 
-| PATH TO FILE               | DESCRIPTION             | KEYBINDING |
-|----------------------------+-------------------------+------------|
-| ~/Org/agenda.org           | /Edit agenda file/      | SPC = a    |
-| ~/.config/doom/config.org  | /Edit doom config.org/  | SPC = c    |
-| ~/.config/doom/init.el     | /Edit doom init.el/     | SPC = i    |
-| ~/.config/doom/packages.el | /Edit doom packages.el/ | SPC = p    |
-
 #+begin_src emacs-lisp
-(map! :leader
-      (:prefix ("=" . "open file")
-       ;;:desc "Edit agenda file" "a" #'(lambda () (interactive) (find-file "~/nc/Org/agenda.org"))
-       :desc "Edit doom config.org" "c" #'(lambda () (interactive) (find-file "~/.config/doom/config.org"))
-       :desc "Edit doom init.el" "i" #'(lambda () (interactive) (find-file "~/.config/doom/init.el"))
-       :desc "Edit doom packages.el" "p" #'(lambda () (interactive) (find-file "~/.config/doom/packages.el"))))
+;;(map! :leader
+;;      (:prefix ("=" . "open file")
+;;       ;;:desc "Edit agenda file" "a" #'(lambda () (interactive) (find-file "~/nc/Org/agenda.org"))
+;;       :desc "Edit doom config.org" "c" #'(lambda () (interactive) (find-file "~/.config/doom/config.org"))
+;;       :desc "Edit doom init.el" "i" #'(lambda () (interactive) (find-file "~/.config/doom/init.el"))
+;;       :desc "Edit doom packages.el" "p" #'(lambda () (interactive) (find-file "~/.config/doom/packages.el"))))
 #+end_src
