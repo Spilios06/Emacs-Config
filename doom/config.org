@@ -1,0 +1,137 @@
+#+title: My Config
+#+author: Spilios Maderakis
+#+property: header-args :tangle config.el
+
+* TABLE OF CONTENTS :toc:
+- [[#information-about-this-config][Information About This Config]]
+- [[#emacs-lisp][Emacs Lisp]]
+- [[#org-mode][Org Mode]]
+- [[#how-to-use-this-config][How To Use This Config]]
+- [[#fonts][Fonts]]
+- [[#lines][Lines]]
+- [[#themes][Themes]]
+- [[#org-mode-1][Org Mode]]
+- [[#window-split][Window Split]]
+- [[#dashboard][Dashboard]]
+- [[#cursor-beacon][Cursor Beacon]]
+- [[#dired][Dired]]
+- [[#specific-paths-binds][Specific Paths Binds]]
+
+* Information About This Config
+
+Doom Emacs is a distribution of the popular GNU/Emacs interpreter. This distribution of emacs utilizes the 'evil' keybindings which are normally used in the popular text editor vim. This configuration will be kept and maintiained on my github repository, this is my personal configuration for emacs and you can use this configuration yourself or use this configuration alongside this org document as a reference or guide to write your own config for emacs.
+
+* Emacs Lisp
+
+Emacs lisp is a dialect of the Lisp programming languadge with better adjustements and extentions for text editing and various other uses. This file besides being used for documentation for the repo, it is also an emacs lisp script run by Doom Emacs itself, org mode is a core feature of Emacs and is one of the main reasons for which people use emacs in the first place.
+
+* Org Mode
+
+Org mode is an essential part of emacs, it allows users to use a more efficient way of writting code, to-do lists, configuration files, notes and much more. Essentially what it is, is a way of formating or in other words organizing a file. Very similar to a markdown languadge it is split into different levels of headers as you can see in this very document. Now org mode, especially within an editor such as doom emacs can be a very powerfull tool.
+
+* How To Use This Config
+
+After downloading doom emacs and this org file, you simply need to place this file in your doom emacs config folder which I like to keep at /home/.config/doom the default path is /home/.doom.d however I prefer the former due to the fact that I like to keep all my configuration files in one directory. After setting this up its a simple process of opening the file in doom emacs and runnign two simple commands, first one will be do 'C-c C-c' after hovering over #property and after that running 'M-x org-babel-tangle', you should repeat these commands every time you have made an update yo your config in order for the source blocks from your org document to be copy pasted over to the actuall config file.
+
+* Fonts
+
+Sets the various fonts (default, big and variable which is sometimes used by plugins) as well as enabling bold and italic characters. The last lines make special keywords within programming languadges italisised, meaning if you are writing a python script and want to use a while loop, the word while will be in italics since it has significance within that programming languadge. These fonts may not be installed by default onto your system and emacs will not render properly unless they are installed so if they aren't installed follow [[https://docs.rockylinux.org/books/nvchad/nerd_fonts/][this]] guide to install them if you dont know how to.
+
+#+begin_src emacs-lisp
+(setq doom-font (font-spec :family "SauceCodePro Nerd Font Mono" :size 15)
+      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 15)
+      doom-big-font (font-spec :family "SauceCodePro Nerd Font Mono" :size 24))
+(after! doom-themes
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t))
+(custom-set-faces!
+  '(font-lock-comment-face :slant italic)
+  '(font-lock-keyword-face :slant italic))
+#+end_src
+
+* Lines
+
+#+begin_src emacs-lisp
+(setq display-line-numbers-type t)
+#+end_src
+
+* Themes
+
+#+begin_src emacs-lisp
+(setq doom-theme 'doom-one)
+#+end_src
+
+* Org Mode
+
+#+begin_src emacs-lisp
+(map! :leader
+      :desc "Org babel tangle" "m B" #'org-babel-tangle)
+(setq org-directory "~/org/")
+(setq org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆"))
+      ;;org-superstar-itembullet-alist '((?+ . ?➤) (?- . ?✦)) ; changes +/- symbols in item lists
+#+end_src
+
+* Window Split
+
+#+begin_src emacs-lisp
+(defun prefer-horizontal-split ()
+  (set-variable 'split-height-threshold nil t)
+  (set-variable 'split-width-threshold 40 t))
+(add-hook 'markdown-mode-hook 'prefer-horizontal-split)
+(map! :leader
+      :desc "Clone indirect buffer other window" "b c" #'clone-indirect-buffer-other-window)
+#+end_src
+
+* Dashboard
+#+begin_src emacs-lisp
+(use-package dashboard
+  :init
+  (setq dashboard-set-heading-icons t)
+  (setq dashboard-set-file-icons t)
+  (setq dashboard-startup-banner 'logo)
+  ;(setq dashboard-startup-banner "~/.config/doom/doom-emacs-dash.png")
+  (setq dashboard-center-content t))
+  :config
+  (dashboard-setup-startup-hook)
+(setq doom-fallback-buffer "*dashboard")
+#+end_src
+
+* Cursor Beacon
+
+Makes the line on which the cursor is on shine while scrolling.
+
+#+begin_src emacs-lisp
+(beacon-mode 1)
+#+end_src
+
+* Dired
+
+The file manager used in doom emacs. With dired-open plugin, you can launch external programs for certain extensions.
+
+#+begin_src emacs-lisp
+;;(map! :leader
+;;      (:prefix ("d" . "dired")
+;;       :desc "Open dired" "d" #'dired)
+;;(evil-define-key 'normal dired-mode-map
+;;  (kbd "h") 'dired-up-directory
+;;  (kbd "l") 'dired-open-file
+
+;;(setq dired-open-extensions '(("gif" . "sxiv")
+;;                              ("jpg" . "sxiv")
+;;                              ("png" . "sxiv")
+;;                              ("mkv" . "mpv")
+;;                              ("mp4" . "mpv")))
+#+end_src
+
+* Specific Paths Binds
+
+Specific keybindings to jump to specific files which I open and edit often.
+
+#+begin_src emacs-lisp
+;;(map! :leader
+;;      (:prefix ("=" . "open file")
+;;       ;;:desc "Edit agenda file" "a" #'(lambda () (interactive) (find-file "~/nc/Org/agenda.org"))
+;;       :desc "Edit doom config.org" "c" #'(lambda () (interactive) (find-file "~/.config/doom/config.org"))
+;;       :desc "Edit doom init.el" "i" #'(lambda () (interactive) (find-file "~/.config/doom/init.el"))
+;;       :desc "Edit doom packages.el" "p" #'(lambda () (interactive) (find-file "~/.config/doom/packages.el"))))
+#+end_src
