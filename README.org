@@ -98,11 +98,3 @@ Makes the line on which the cursor is on shine while scrolling.
 #+begin_src emacs-lisp
 (beacon-mode 1)
 #+end_src
-
-* Dired
-
-The file manager used in doom emacs. With dired-open plugin, you can launch external programs for certain extensions.
-
-#+begin_src emacs-lisp
-
-#+end_src
