@@ -1,13 +1,13 @@
 #+title: Readme
 
+* Structure of this repo
+
+I use a configuration for emacs called chemacs 2, which is essentially an emacs profile switcher, meaning the user is able to save and run multiple configurations of emacs at the same time, I will be using this from now on as I would like to test out many different emacs configurations, including Doom Emacs which I have been using up until now, standard GNU emacs as well as spacemacs. For this reason the repo will be split into multiple directories, each for its respective configuration.
+
 * Installation
 
 To install this set of configurations you will clone the repo with
 #+begin_src shell
 git clone https://github.com/Spilios06/Emacs-Config.git
 #+end_src
-if you also choose to run chemacs 2 you just move the contents of the checmacs directory into your =.emacs.d= and the other directories into your =.config= alternitively if you only one to use one of these configurations your will have to install said configuration of emacs, whether that be doom or spacemacs and the move the according directory into your =.config= or if you use my GNU emacs config you can just copy the contents straight into =.emacs.d=
-
-* Structure of this repo
-
-I use a configuration for emacs called chemacs 2, which is essentially an emacs profile switcher, meaning the user is able to save and run multiple configurations of emacs at the same time, I will be using this from now on as I would like to test out many different emacs configurations, including Doom Emacs which I have been using up until now, standard GNU emacs as well as spacemacs. For this reason the repo will be split into multiple directories, each for its respective configuration.
+If you also choose to run chemacs 2 you just move the contents of the checmacs directory into your =.emacs.d= and the other directories into your =.config= alternitively if you only one to use one of these configurations your will have to install said configuration of emacs, whether that be doom or spacemacs and the move the according directory into your =.config= or if you use my GNU emacs config you can just copy the contents straight into =.emacs.d=
