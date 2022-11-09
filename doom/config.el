@@ -23,7 +23,8 @@
   (set-variable 'split-width-threshold 40 t))
 (add-hook 'markdown-mode-hook 'prefer-horizontal-split)
 (map! :leader
-      :desc "Clone indirect buffer other window" "b c" #'clone-indirect-buffer-other-window)
+      :desc "Clone indirect buffer other window"
+      "b c" #'clone-indirect-buffer-other-window)
 
 (use-package dashboard
   :init
@@ -38,9 +39,10 @@
 
 (beacon-mode 1)
 
-;;(map! :leader
-;;      (:prefix ("d" . "dired")
-;;       :desc "Open dired" "d" #'dired)
+(map! :leader
+      (:prefix ("d" . "dired")
+      :desc "Opens dired"
+      "d" #'dired))
 ;;(evil-define-key 'normal dired-mode-map
 ;;  (kbd "h") 'dired-up-directory
 ;;  (kbd "l") 'dired-open-file
@@ -50,10 +52,3 @@
 ;;                              ("png" . "sxiv")
 ;;                              ("mkv" . "mpv")
 ;;                              ("mp4" . "mpv")))
-
-;;(map! :leader
-;;      (:prefix ("=" . "open file")
-;;       ;;:desc "Edit agenda file" "a" #'(lambda () (interactive) (find-file "~/nc/Org/agenda.org"))
-;;       :desc "Edit doom config.org" "c" #'(lambda () (interactive) (find-file "~/.config/doom/config.org"))
-;;       :desc "Edit doom init.el" "i" #'(lambda () (interactive) (find-file "~/.config/doom/init.el"))
-;;       :desc "Edit doom packages.el" "p" #'(lambda () (interactive) (find-file "~/.config/doom/packages.el"))))

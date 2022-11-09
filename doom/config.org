@@ -15,7 +15,6 @@
 - [[#dashboard][Dashboard]]
 - [[#cursor-beacon][Cursor Beacon]]
 - [[#dired][Dired]]
-- [[#specific-paths-binds][Specific Paths Binds]]
 
 * Information About This Config
 
@@ -79,7 +78,8 @@ Sets the various fonts (default, big and variable which is sometimes used by plu
   (set-variable 'split-width-threshold 40 t))
 (add-hook 'markdown-mode-hook 'prefer-horizontal-split)
 (map! :leader
-      :desc "Clone indirect buffer other window" "b c" #'clone-indirect-buffer-other-window)
+      :desc "Clone indirect buffer other window"
+      "b c" #'clone-indirect-buffer-other-window)
 #+end_src
 
 * Dashboard
@@ -109,9 +109,10 @@ Makes the line on which the cursor is on shine while scrolling.
 The file manager used in doom emacs. With dired-open plugin, you can launch external programs for certain extensions.
 
 #+begin_src emacs-lisp
-;;(map! :leader
-;;      (:prefix ("d" . "dired")
-;;       :desc "Open dired" "d" #'dired)
+(map! :leader
+      (:prefix ("d" . "dired")
+      :desc "Opens dired"
+      "d" #'dired))
 ;;(evil-define-key 'normal dired-mode-map
 ;;  (kbd "h") 'dired-up-directory
 ;;  (kbd "l") 'dired-open-file
@@ -121,17 +122,4 @@ The file manager used in doom emacs. With dired-open plugin, you can launch exte
 ;;                              ("png" . "sxiv")
 ;;                              ("mkv" . "mpv")
 ;;                              ("mp4" . "mpv")))
-#+end_src
-
-* Specific Paths Binds
-
-Specific keybindings to jump to specific files which I open and edit often.
-
-#+begin_src emacs-lisp
-;;(map! :leader
-;;      (:prefix ("=" . "open file")
-;;       ;;:desc "Edit agenda file" "a" #'(lambda () (interactive) (find-file "~/nc/Org/agenda.org"))
-;;       :desc "Edit doom config.org" "c" #'(lambda () (interactive) (find-file "~/.config/doom/config.org"))
-;;       :desc "Edit doom init.el" "i" #'(lambda () (interactive) (find-file "~/.config/doom/init.el"))
-;;       :desc "Edit doom packages.el" "p" #'(lambda () (interactive) (find-file "~/.config/doom/packages.el"))))
 #+end_src
