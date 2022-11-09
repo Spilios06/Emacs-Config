@@ -1,2 +1,2 @@
 (("default" . ((user-emacs-directory . "~/.config/chemacs/doom")))
- ("GNU" . ((user-emacs-directory . "~/.config/chemacs/gnu"))))
+ ("gnu" . ((user-emacs-directory . "~/.config/chemacs/gnu"))))
