@@ -40,12 +40,16 @@
 (beacon-mode 1)
 
 (map! :leader
-      (:prefix ("d" . "dired")
+      ;;(:prefix ("d" . "dired")
       :desc "Opens dired"
-      "d" #'dired))
+      "d d" #'dired)
+     ;;(:after dired
+      ;;(:map dired-mode-map)))
+
 ;;(evil-define-key 'normal dired-mode-map
 ;;  (kbd "h") 'dired-up-directory
 ;;  (kbd "l") 'dired-open-file
+
 
 ;;(setq dired-open-extensions '(("gif" . "sxiv")
 ;;                              ("jpg" . "sxiv")
