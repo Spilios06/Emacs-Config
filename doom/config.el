@@ -10,7 +10,7 @@
 
 (setq display-line-numbers-type t)
 
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-outrun-electric)
 
 (map! :leader
       :desc "Org babel tangle" "m B" #'org-babel-tangle)
@@ -56,3 +56,15 @@
 ;;                              ("png" . "sxiv")
 ;;                              ("mkv" . "mpv")
 ;;                              ("mp4" . "mpv")))
+
+(use-package spaceline
+  :ensure t)
+
+(use-package spaceline-config
+  :ensure spaceline
+  :config
+  (spaceline-helm-mode 1)
+  (spaceline-emacs-theme)
+  (spaceline-toggle-org-clock-on)
+  (spaceline-toggle-minor-modes-off)
+  (spaceline-toggle-version-control-off))
