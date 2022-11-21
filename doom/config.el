@@ -12,7 +12,9 @@
 
 ;;(setq doom-theme 'doom-outrun-electric)
 ;;(setq doom-theme 'doom-one)
-(setq doom-theme 'doom-dracula)
+;;(setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-palenight)
+;(setq doom-theme 'doom-vibrant)
 
 (map! :leader
       :desc "Org babel tangle" "m B" #'org-babel-tangle)
