@@ -10,4 +10,4 @@ To install this set of configurations you will clone the repo with
 #+begin_src shell
 git clone https://github.com/Spilios06/Emacs-Config.git
 #+end_src
-If you also choose to run chemacs you just checmacs into your =.emacs.d= and the other directories into your =.config= alternitively if you only one to use one of these configurations your will have to install said configuration of emacs, whether that be doom or spacemacs and the move the according directory into your =.config= or if you use my GNU emacs config you can just copy the contents straight into =.emacs.d=
+If you also choose to run chemacs you just clone checmacs into your =.emacs.d= and the other directories into your =.config= alternitively if you only one to use one of these configurations your will have to install said configuration of emacs, whether that be doom or spacemacs and the move the according directory into your =.config= or if you use my GNU emacs config you can just copy the contents straight into =.emacs.d=
