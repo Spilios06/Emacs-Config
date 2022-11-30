@@ -17,7 +17,8 @@
 ;(setq doom-theme 'doom-vibrant)
 
 (map! :leader
-      :desc "Org babel tangle" "m B" #'org-babel-tangle)
+      :desc "Org babel tangle"
+      "m B" #'org-babel-tangle)
 (setq org-directory "~/org/")
 (setq org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆"))
       ;;org-superstar-itembullet-alist '((?+ . ?➤) (?- . ?✦)) ; changes +/- symbols in item lists
@@ -61,14 +62,14 @@
 ;;                              ("mkv" . "mpv")
 ;;                              ("mp4" . "mpv")))
 
-(use-package spaceline
-  :ensure t)
+;;(use-package spaceline
+;;  :ensure t)
 
-(use-package spaceline-config
-  :ensure spaceline
-  :config
-  (spaceline-helm-mode 1)
-  (spaceline-emacs-theme)
-  (spaceline-toggle-org-clock-on)
-  (spaceline-toggle-minor-modes-off)
-  (spaceline-toggle-version-control-off))
+;;(use-package spaceline-config
+;;  :ensure spaceline
+;;  :config
+;;  (spaceline-helm-mode 1)
+;;  (spaceline-emacs-theme)
+;;  (spaceline-toggle-org-clock-on)
+;;  (spaceline-toggle-minor-modes-off)
+;;  (spaceline-toggle-version-control-off))

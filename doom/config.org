@@ -69,7 +69,8 @@ Sets the various fonts (default, big and variable which is sometimes used by plu
 
 #+begin_src emacs-lisp
 (map! :leader
-      :desc "Org babel tangle" "m B" #'org-babel-tangle)
+      :desc "Org babel tangle"
+      "m B" #'org-babel-tangle)
 (setq org-directory "~/org/")
 (setq org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆"))
       ;;org-superstar-itembullet-alist '((?+ . ?➤) (?- . ?✦)) ; changes +/- symbols in item lists
@@ -137,15 +138,15 @@ The file manager used in doom emacs. With dired-open plugin, you can launch exte
 The status bar that appears on the bottom of the screen
 
 #+begin_src emacs-lisp
-(use-package spaceline
-  :ensure t)
+;;(use-package spaceline
+;;  :ensure t)
 
-(use-package spaceline-config
-  :ensure spaceline
-  :config
-  (spaceline-helm-mode 1)
-  (spaceline-emacs-theme)
-  (spaceline-toggle-org-clock-on)
-  (spaceline-toggle-minor-modes-off)
-  (spaceline-toggle-version-control-off))
+;;(use-package spaceline-config
+;;  :ensure spaceline
+;;  :config
+;;  (spaceline-helm-mode 1)
+;;  (spaceline-emacs-theme)
+;;  (spaceline-toggle-org-clock-on)
+;;  (spaceline-toggle-minor-modes-off)
+;;  (spaceline-toggle-version-control-off))
 #+end_src
